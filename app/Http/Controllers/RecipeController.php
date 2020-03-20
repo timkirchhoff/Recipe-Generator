@@ -8,4 +8,9 @@ class RecipeController extends Controller
     {
         return view('home');
     }
+
+    public function new()
+    {
+        return view('recipes.new');
+    }
 }

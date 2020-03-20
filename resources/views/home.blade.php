@@ -38,7 +38,7 @@
             <div class="inner">
                 <div class="align-center">
                     <h2>Have something yummy to share?</h2>
-                    <a href="#" class="button big">Add New Recipe</a>
+                    <a href="{{ route('recipes.new') }}" class="button big">Add New Recipe</a>
                 </div>
             </div>
         </section>

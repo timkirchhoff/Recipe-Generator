@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'RecipeController@index')->name('home');
+Route::get('/new', 'RecipeController@new')->name('recipes.new');
