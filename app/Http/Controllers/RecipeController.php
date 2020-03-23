@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRecipeRequest;
+use App\Recipe;
+
 class RecipeController extends Controller
 {
     public function index() 
@@ -14,8 +17,16 @@ class RecipeController extends Controller
         return view('recipes.new');
     }
 
-    public function store()
+    public function store(StoreRecipeRequest $request)
     {
+        $validated_recipe = $request->validated();
+        $recipe_info = array_slice($validated_recipe, 0, 2);
+        // $recipe_ingredients = array_slice($validated_recipe, 2, 1);
+        // $recipe_steps = array_slice($validated_recipe, 3, 1);
         
+        $recipe = Recipe::storeRecipe($recipe_info);
+        
+        // dd($recipe->id);
+        // return view('recipes.show')->with('data', $validated_recipe);
     }
 }
