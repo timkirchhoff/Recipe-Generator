@@ -13,4 +13,9 @@ class RecipeController extends Controller
     {
         return view('recipes.new');
     }
+
+    public function store()
+    {
+        
+    }
 }
