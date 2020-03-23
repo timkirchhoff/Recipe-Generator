@@ -11,6 +11,7 @@
                 <div class="align-center">
                     <h2>Add New Recipe</h2>
                     <form action="{{ route('recipes.store') }}" method="POST" id="recipeForm">
+                        @csrf
                         <div class="row uniform">
                             <!-- Recipe Info -->
                             <div class="11u$">
@@ -23,11 +24,11 @@
                             <!-- Ingredients -->
                             <h4 class="12u$">Ingredients</h4>
                             <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredient[1][amount]" placeholder="Amount" required/>
+                                <input type="text" class="ingredientAmount" name="ingredients[1][amount]" placeholder="Amount" required/>
                             </div>
                             <div class="2u">
                                 <div class="select-wrapper">
-                                    <select name="ingredient[1][measurement]" required>
+                                    <select name="ingredients[1][measurement]" required>
                                         <option value="">- Measurement -</option>
                                         <option value="cup">cup</option>
                                         <option value="pound">lb</option>
@@ -38,15 +39,15 @@
                                 </div>
                             </div>
                             <div class="7u$">
-                                <input type="text" name="ingredient[1][name]" placeholder="Ingredient" required/>
+                                <input type="text" name="ingredients[1][name]" placeholder="Ingredient" required/>
                             </div>
                             <!-- Ingredient 2 -->
                             <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredient[2][amount]" placeholder="Amount" required/>
+                                <input type="text" class="ingredientAmount" name="ingredients[2][amount]" placeholder="Amount" required/>
                             </div>
                             <div class="2u">
                                 <div class="select-wrapper">
-                                    <select name="ingredient[2][measurement]" required>
+                                    <select name="ingredients[2][measurement]" required>
                                         <option value="">- Measurement -</option>
                                         <option value="cup">cup</option>
                                         <option value="pound">lb</option>
@@ -57,15 +58,15 @@
                                 </div>
                             </div>
                             <div class="7u$">
-                                <input type="text" name="ingredient[2][name]" placeholder="Ingredient" required/>
+                                <input type="text" name="ingredients[2][name]" placeholder="Ingredient" required/>
                             </div>
                             <!-- Ingredient 3 -->
                             <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredient[3][amount]" placeholder="Amount" required/>
+                                <input type="text" class="ingredientAmount" name="ingredients[3][amount]" placeholder="Amount" required/>
                             </div>
                             <div class="2u">
                                 <div class="select-wrapper">
-                                    <select name="ingredient[3][measurement]" required>
+                                    <select name="ingredients[3][measurement]" required>
                                         <option value="">- Measurement -</option>
                                         <option value="cup">cup</option>
                                         <option value="pound">lb</option>
@@ -76,7 +77,7 @@
                                 </div>
                             </div>
                             <div class="7u$">
-                                <input type="text" name="ingredient[3][name]" placeholder="Ingredient" required/>
+                                <input type="text" name="ingredients[3][name]" placeholder="Ingredient" required/>
                             </div>
 
                             <!-- Steps -->
@@ -85,19 +86,19 @@
                                 <input type="text" class="stepNumber" name="stepNumber" value="1" required/>
                             </div>
                             <div class="10u$">
-                                <input type="text" name="step[1]" placeholder="Add step instructions..." required/>
+                                <input type="text" name="steps[1]" placeholder="Add step instructions..." required/>
                             </div>
                             <div class="1u">
                                 <input type="text" class="stepNumber" name="stepNumber" value="2" required/>
                             </div>
                             <div class="10u$">
-                                <input type="text" name="step[2]" placeholder="Add step instructions..." required/>
+                                <input type="text" name="steps[2]" placeholder="Add step instructions..." required/>
                             </div>
                             <div class="1u">
                                 <input type="text" class="stepNumber" name="stepNumber" value="3" required/>
                             </div>
                             <div class="10u$">
-                                <input type="text" name="step[3]" placeholder="Add step instructions..." required/>
+                                <input type="text" name="steps[3]" placeholder="Add step instructions..." required/>
                             </div>
 
                             <!-- Buttons -->
