@@ -10,6 +10,7 @@
             <div class="inner">
                 <div class="align-center">
                     <h2>Add New Recipe</h2>
+                    @include('partials.error')
                     <form action="{{ route('recipes.store') }}" method="POST" id="recipeForm">
                         @csrf
                         <div class="row uniform">
