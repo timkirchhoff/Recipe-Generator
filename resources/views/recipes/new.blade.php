@@ -83,19 +83,19 @@
                             <!-- Steps -->
                             <h4 class="12u$">Steps</h4>
                             <div class="1u">
-                                <input type="text" class="stepNumber" name="stepNumber" value="1" required/>
+                                <span class="stepNumber">1.</span>
                             </div>
                             <div class="10u$">
                                 <input type="text" name="steps[1]" placeholder="Add step instructions..." required/>
                             </div>
                             <div class="1u">
-                                <input type="text" class="stepNumber" name="stepNumber" value="2" required/>
+                                <span class="stepNumber">2.</span>
                             </div>
                             <div class="10u$">
                                 <input type="text" name="steps[2]" placeholder="Add step instructions..." required/>
                             </div>
                             <div class="1u">
-                                <input type="text" class="stepNumber" name="stepNumber" value="3" required/>
+                                <span class="stepNumber">3.</span>
                             </div>
                             <div class="10u$">
                                 <input type="text" name="steps[3]" placeholder="Add step instructions..." required/>
