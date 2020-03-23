@@ -30,7 +30,7 @@ class RecipeController extends Controller
         Ingredient::storeIngredients($recipe->id, $recipe_ingredients);
         Step::storeSteps($recipe->id, $recipe_steps);
         
-        // dd($recipe->id);
-        // return view('recipes.show')->with('data', $validated_recipe);
+        session()->flash('success', 'New recipe added!');
+        return redirect(route('home'));
     }
 }
