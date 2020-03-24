@@ -28,6 +28,22 @@ span.stepNumber {
     color: black;
 }
 
+button.remove_ingredient {
+    background-color: rgb(180, 40, 40) !important;
+    font-weight: 900;
+    font-size: inherit;
+}
+
+#ingredients_heading {
+    padding-top: 2em;
+}
+
+#add_ingredient {
+    background-color: rgb(40, 180, 40);
+    font-weight: 900;
+    font-size: inherit;
+}
+
 #dinnerForm input {
     width: 80px;
     height: 60px;

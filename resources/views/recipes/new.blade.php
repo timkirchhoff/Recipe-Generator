@@ -24,28 +24,30 @@
                         </div>
 
                         <!-- ====== Ingredients ====== -->
-                        <div class="row uniform" id="ingredients_row">
-                            <h4 class="12u$">Ingredients</h4>
-                            <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredients[1][amount]" placeholder="Amount" required/>
-                            </div>
-                            <div class="2u">
-                                <div class="select-wrapper">
-                                    <select name="ingredients[1][measurement]" required>
-                                        <option value="">- Measurement -</option>
-                                        <option value="cup">cup</option>
-                                        <option value="pound">lb</option>
-                                        <option value="ounce">oz</option>
-                                        <option value="teaspoon">tsp</option>
-                                        <option value="tablespoon">Tbsp</option>
-                                    </select>
+                        <div id="ingredients">
+                            <h4 class="12u$" id="ingredients_heading">Ingredients</h4>
+                            <div class="row uniform" id="ingredient1">
+                                <div class="2u">
+                                    <input type="text" class="ingredientAmount" name="ingredients[1][amount]" placeholder="Amount" required/>
                                 </div>
-                            </div>
-                            <div class="7u">
-                                <input type="text" name="ingredients[1][name]" placeholder="Ingredient" required/>
-                            </div>
-                            <div class="1u$">
-                                <button type="button" name="add_ingredient" id="add_ingredient">+</button>
+                                <div class="2u">
+                                    <div class="select-wrapper">
+                                        <select name="ingredients[1][measurement]" required>
+                                            <option value="">- Measurement -</option>
+                                            <option value="cup">cup</option>
+                                            <option value="pound">lb</option>
+                                            <option value="ounce">oz</option>
+                                            <option value="teaspoon">tsp</option>
+                                            <option value="tablespoon">Tbsp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="7u">
+                                    <input type="text" name="ingredients[1][name]" placeholder="Ingredient" required/>
+                                </div>
+                                <div class="1u$">
+                                    <button type="button" name="add_ingredient" id="add_ingredient">+</button>
+                                </div>
                             </div>
                         </div>
                         
@@ -80,5 +82,20 @@
 @endsection
 
 @section('scripts')
+    <script>
+        $(document).ready(function(){
+            var ingredient_count = 1;
+            var step_count = 1;
 
+            $('#add_ingredient').click(function(){
+                ingredient_count++;
+                $('#ingredients').append('<div class="row uniform" id="ingredient'+ingredient_count+'"><div class="2u"><input type="text" class="ingredientAmount" name="ingredients['+ingredient_count+'][amount]" placeholder="Amount" required></div><div class="2u"><div class="select-wrapper"><select name="ingredients['+ingredient_count+'][measurement]" required><option value="">- Measurement -</option><option value="cup">cup</option><option value="pound">lb</option><option value="ounce">oz</option><option value="teaspoon">tsp</option><option value="tablespoon">Tbsp</option></select></div></div><div class="7u"><input type="text" name="ingredients['+ingredient_count+'][name]" placeholder="Ingredient" required></div><div class="1u$"><button type="button" name="remove_ingredient" class="remove_ingredient" id="'+ingredient_count+'">-</button></div></div>');
+            });
+
+            $(document).on('click', '.remove_ingredient', function(){
+                var ingredient_id = $(this).attr("id");
+                $('#ingredient'+ingredient_id+'').remove();
+            });
+        });
+    </script>
 @endsection
