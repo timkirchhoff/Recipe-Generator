@@ -22,23 +22,23 @@
     text-align: center;
 }
 
-span.stepNumber {
+.\31 u.stepNumber {
     font-weight: 800;
-    font-size: x-large;
+    font-size: 1.3em;
     color: black;
 }
 
-button.remove_ingredient {
+button.remove_ingredient, button.remove_step {
     background-color: rgb(180, 40, 40) !important;
     font-weight: 900;
     font-size: inherit;
 }
 
-#ingredients_heading {
+#ingredients_heading, #steps_heading {
     padding-top: 2em;
 }
 
-#add_ingredient {
+#add_ingredient, #add_step {
     background-color: rgb(40, 180, 40);
     font-weight: 900;
     font-size: inherit;

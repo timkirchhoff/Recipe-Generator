@@ -52,16 +52,16 @@
                         </div>
                         
                         <!-- ====== Steps ====== -->
-                        <div class="row uniform" id="steps_row">
-                            <h4 class="12u$">Steps</h4>
-                            <div class="1u">
-                                <span class="stepNumber">1.</span>
-                            </div>
-                            <div class="10u">
-                                <input type="text" name="steps[1]" placeholder="Add step instructions..." required/>
-                            </div>
-                            <div class="1u$">
-                                <button type="button" name="add_step" id="add_step">+</button>
+                        <div id="steps">
+                            <h4 class="12u$" id="steps_heading">Steps</h4>
+                            <div class="row uniform" id="step1">
+                                <div class="1u stepNumber">1.</div>
+                                <div class="10u">
+                                    <input type="text" name="steps[1]" placeholder="Add step instructions..." required/>
+                                </div>
+                                <div class="1u$">
+                                    <button type="button" name="add_step" id="add_step">+</button>
+                                </div>
                             </div>
                         </div>
 
@@ -95,6 +95,22 @@
             $(document).on('click', '.remove_ingredient', function(){
                 var ingredient_id = $(this).attr("id");
                 $('#ingredient'+ingredient_id+'').remove();
+            });
+
+            $('#add_step').click(function(){
+                step_count++;
+                $('#steps').append('<div class="row uniform" id="step'+step_count+'"><div class="1u stepNumber">'+step_count+'.</div><div class="10u"><input type="text" name="steps['+step_count+']" placeholder="Add step instructions..." required></div><div class="1u$"><button type="button" name="remove_step" class="remove_step" id="'+step_count+'">-</button></div></div>');
+                if(step_count > 2){
+                    $('.remove_step').prop('disabled', true);
+                    $('.remove_step:last').removeProp('disabled');
+                }
+            });
+
+            $(document).on('click', '.remove_step', function(){
+                var step_id = $(this).attr("id");
+                $('#step'+step_id+'').remove();
+                step_count--;
+                $('.remove_step:last').removeProp('disabled');
             });
         });
     </script>
