@@ -48,44 +48,6 @@
                                 <button type="button" name="add_ingredient" id="add_ingredient">+</button>
                             </div>
                         </div>
-                            <!-- Ingredient 2 -->
-                            {{-- <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredients[2][amount]" placeholder="Amount" required/>
-                            </div>
-                            <div class="2u">
-                                <div class="select-wrapper">
-                                    <select name="ingredients[2][measurement]" required>
-                                        <option value="">- Measurement -</option>
-                                        <option value="cup">cup</option>
-                                        <option value="pound">lb</option>
-                                        <option value="ounce">oz</option>
-                                        <option value="teaspoon">tsp</option>
-                                        <option value="tablespoon">Tbsp</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="7u$">
-                                <input type="text" name="ingredients[2][name]" placeholder="Ingredient" required/>
-                            </div>
-                            <!-- Ingredient 3 -->
-                            <div class="2u">
-                                <input type="text" class="ingredientAmount" name="ingredients[3][amount]" placeholder="Amount" required/>
-                            </div>
-                            <div class="2u">
-                                <div class="select-wrapper">
-                                    <select name="ingredients[3][measurement]" required>
-                                        <option value="">- Measurement -</option>
-                                        <option value="cup">cup</option>
-                                        <option value="pound">lb</option>
-                                        <option value="ounce">oz</option>
-                                        <option value="teaspoon">tsp</option>
-                                        <option value="tablespoon">Tbsp</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="7u$">
-                                <input type="text" name="ingredients[3][name]" placeholder="Ingredient" required/>
-                            </div> --}}
                         
                         <!-- ====== Steps ====== -->
                         <div class="row uniform" id="steps_row">
@@ -100,18 +62,6 @@
                                 <button type="button" name="add_step" id="add_step">+</button>
                             </div>
                         </div>
-                            {{-- <div class="1u">
-                                <span class="stepNumber">2.</span>
-                            </div>
-                            <div class="10u$">
-                                <input type="text" name="steps[2]" placeholder="Add step instructions..." required/>
-                            </div>
-                            <div class="1u">
-                                <span class="stepNumber">3.</span>
-                            </div>
-                            <div class="10u$">
-                                <input type="text" name="steps[3]" placeholder="Add step instructions..." required/>
-                            </div> --}}
 
                         <!-- ====== Buttons ====== -->
                         <div class="row uniform" id="buttons_row">
