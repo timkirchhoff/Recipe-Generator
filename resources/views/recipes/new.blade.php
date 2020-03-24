@@ -11,18 +11,20 @@
                 <div class="align-center">
                     <h2>Add New Recipe</h2>
                     @include('partials.error')
-                    <form action="{{ route('recipes.store') }}" method="POST" id="recipeForm">
+                    <form action="{{ route('recipes.store') }}" method="POST" id="add_recipe_form">
                         @csrf
-                        <div class="row uniform">
-                            <!-- Recipe Info -->
-                            <div class="11u$">
+                        <!-- ====== Recipe Info ====== -->
+                        <div class="row uniform" id="recipe_info_row">
+                            <div class="12u$">
                                 <input type="text" name="title" placeholder="Recipe Title" required/>
                             </div>
-                            <div class="11u$">
+                            <div class="12u$">
                                 <textarea name="description" placeholder="Describe your recipe..." rows="6" required></textarea>
                             </div>
-                            
-                            <!-- Ingredients -->
+                        </div>
+
+                        <!-- ====== Ingredients ====== -->
+                        <div class="row uniform" id="ingredients_row">
                             <h4 class="12u$">Ingredients</h4>
                             <div class="2u">
                                 <input type="text" class="ingredientAmount" name="ingredients[1][amount]" placeholder="Amount" required/>
@@ -39,11 +41,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="7u$">
+                            <div class="7u">
                                 <input type="text" name="ingredients[1][name]" placeholder="Ingredient" required/>
                             </div>
+                            <div class="1u$">
+                                <button type="button" name="add_ingredient" id="add_ingredient">+</button>
+                            </div>
+                        </div>
                             <!-- Ingredient 2 -->
-                            <div class="2u">
+                            {{-- <div class="2u">
                                 <input type="text" class="ingredientAmount" name="ingredients[2][amount]" placeholder="Amount" required/>
                             </div>
                             <div class="2u">
@@ -79,17 +85,22 @@
                             </div>
                             <div class="7u$">
                                 <input type="text" name="ingredients[3][name]" placeholder="Ingredient" required/>
-                            </div>
-
-                            <!-- Steps -->
+                            </div> --}}
+                        
+                        <!-- ====== Steps ====== -->
+                        <div class="row uniform" id="steps_row">
                             <h4 class="12u$">Steps</h4>
                             <div class="1u">
                                 <span class="stepNumber">1.</span>
                             </div>
-                            <div class="10u$">
+                            <div class="10u">
                                 <input type="text" name="steps[1]" placeholder="Add step instructions..." required/>
                             </div>
-                            <div class="1u">
+                            <div class="1u$">
+                                <button type="button" name="add_step" id="add_step">+</button>
+                            </div>
+                        </div>
+                            {{-- <div class="1u">
                                 <span class="stepNumber">2.</span>
                             </div>
                             <div class="10u$">
@@ -100,12 +111,13 @@
                             </div>
                             <div class="10u$">
                                 <input type="text" name="steps[3]" placeholder="Add step instructions..." required/>
-                            </div>
+                            </div> --}}
 
-                            <!-- Buttons -->
+                        <!-- ====== Buttons ====== -->
+                        <div class="row uniform" id="buttons_row">
                             <div class="12u$">
                                 <ul class="actions">
-                                    <li><input type="submit" value="Add Recipe" /></li>
+                                    <li><input type="submit" value="Add Recipe" id="add_recipe"/></li>
                                     <li><input type="reset" value="Reset" class="alt" /></li>
                                 </ul>
                             </div>
@@ -115,4 +127,8 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('scripts')
+
 @endsection
