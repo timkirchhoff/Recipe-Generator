@@ -24,7 +24,9 @@
             <div class="inner">
                 <div class="align-center">
                     <h2>How many dinners do you want to make this week?</h2>
+                    @include('partials.error')
                     <form action="#" id="dinnerForm">
+                        @csrf
                         <input type="text">
                         <button type="submit" class="button big">Generate Recipes</button>
                     </form>
