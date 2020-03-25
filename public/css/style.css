@@ -44,7 +44,7 @@ button.remove_ingredient, button.remove_step {
     font-size: inherit;
 }
 
-#dinnerForm input {
+#generate_dinners_form input {
     width: 80px;
     height: 60px;
     margin: 0 auto;
@@ -53,7 +53,7 @@ button.remove_ingredient, button.remove_step {
     font-weight: 700;
 }
 
-#dinnerForm button {
+#generate_dinners_form button {
     margin-top: 2em;
 }
 
