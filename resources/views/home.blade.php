@@ -25,9 +25,9 @@
                 <div class="align-center">
                     <h2>How many dinners do you want to make this week?</h2>
                     @include('partials.error')
-                    <form action="#" id="dinnerForm">
+                    <form action="{{ route('recipes.generate') }}" method="POST" id="dinnerForm">
                         @csrf
-                        <input type="text">
+                        <input type="text" name="dinners" id="dinners" required>
                         <button type="submit" class="button big">Generate Recipes</button>
                     </form>
                 </div>
