@@ -65,13 +65,10 @@
                             </div>
                         </div>
 
-                        <!-- ====== Buttons ====== -->
-                        <div class="row uniform" id="buttons_row">
+                        <!-- ====== Submit Button ====== -->
+                        <div class="row uniform" id="button_row">
                             <div class="12u$">
-                                <ul class="actions">
-                                    <li><input type="submit" value="Add Recipe" id="add_recipe"/></li>
-                                    <li><input type="reset" value="Reset" class="alt" /></li>
-                                </ul>
+                                <button type="submit" class="button big" id="add_recipe">Add Recipe</button>
                             </div>
                         </div>
                     </form>
