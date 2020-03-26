@@ -46,4 +46,14 @@ class Recipe extends Model
 
         return $recipe;
     }
+
+    /**
+     * Get all recipe Ids
+     *
+     * @return void
+     */
+    public static function getRecipeIds()
+    {
+        return Recipe::get('id');
+    }
 }
