@@ -9,6 +9,7 @@
     <section id="banner">
         <div class="inner">
             @include('partials.flash')
+            @include('partials.error')
             <header>
                 <h1>Recipe App</h1>
                 <p>Simplifying Your Dinner Decision Making Process</p>
@@ -24,7 +25,6 @@
             <div class="inner">
                 <div class="align-center">
                     <h2>How many dinners do you want to make this week?</h2>
-                    @include('partials.error')
                     <form action="{{ route('dinners.generate') }}" method="POST" id="generate_dinners_form">
                         @csrf
                         <input type="text" name="dinners" id="dinners" required>

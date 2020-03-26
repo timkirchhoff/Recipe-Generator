@@ -27,4 +27,19 @@ class GenerateRecipeRequest extends FormRequest
             'dinners' => 'required|numeric|min:1|max:7'
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'dinners.required' => 'Please enter a number between 1 and 7',
+            'dinners.numeric' => 'Please enter a number between 1 and 7',
+            'dinners.min' => 'Please enter a number between 1 and 7',
+            'dinners.max' => 'Please enter a number between 1 and 7',
+        ];
+    }
 }
