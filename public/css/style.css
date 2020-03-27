@@ -1,21 +1,19 @@
 .alert {
     position:relative;
-    padding:.75rem 1.25rem;
     margin-bottom:1rem;
-    border:1px solid transparent;
     border-radius:.25rem;
 }
 
 .alert-success {
     color:#155724;
-    background-color:#d4edda;
-    border-color:#c3e6cb;
+    background-color:#4fe067;
+    border-color:#4fe067;
 }
 
 .alert-danger {
     color:#721c24;
-    background-color:#f8d7da;
-    border-color:#f5c6cb;
+    background-color:#e04f4f;
+    border-color:#e04f4f;
 }
 
 .ingredientAmount {
@@ -44,7 +42,7 @@ button.remove_ingredient, button.remove_step {
     font-size: inherit;
 }
 
-#dinnerForm input {
+#generate_dinners_form input {
     width: 80px;
     height: 60px;
     margin: 0 auto;
@@ -53,7 +51,7 @@ button.remove_ingredient, button.remove_step {
     font-weight: 700;
 }
 
-#dinnerForm button {
+#generate_dinners_form button {
     margin-top: 2em;
 }
 
