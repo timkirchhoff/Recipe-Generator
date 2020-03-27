@@ -9,8 +9,19 @@ class Recipe extends Model
     protected $fillable = ['title', 'description'];
     
     /**
+     * Relationship between Recipe and User
+     * Given a recipe, return the owning user
+     *
+     * @return void
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    
+    /**
      * Relationship between Recipe and Ingredient
-     * Given a recipe, return the ingrdients
+     * Given a recipe, return the ingredients
      *
      * @return void
      */
