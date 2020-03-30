@@ -3521,6 +3521,7 @@
 			overflow: hidden;
 			position: absolute;
 			top: 1.5em;
+			padding-right: 2em;
 		}
 
 			#header.alt h1 {
