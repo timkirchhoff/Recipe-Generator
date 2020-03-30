@@ -3,8 +3,26 @@
 @section('title')
     Recipe App
 @endsection
-        
+
 @section('content')
+    <!-- Header -->
+    <header id="header" class="alt">
+        @guest
+            <a href="{{ route('login') }}">Sign In</a>
+            <a href="{{ route('register') }}">Register</a>
+        @else
+            <a href="#">{{ Auth::user()->name }}</a>
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        @endguest
+    </header>
+
     <!-- Banner -->
     <section id="banner">
         <div class="inner">
