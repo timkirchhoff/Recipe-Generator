@@ -21,3 +21,5 @@ Route::get('/recipe/new', 'RecipeController@new')->name('recipes.new');
 Route::post('/recipe', 'RecipeController@store')->name('recipes.store');
 
 Route::post('/dinners/generate', 'DinnerController@generate')->name('dinners.generate');
+
+Route::get('/user/{user}', 'UserController@index')->name('user.home');
