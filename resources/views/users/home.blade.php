@@ -34,7 +34,7 @@
                                         <tr>    
                                             <td>{{ $recipe->title }}</td>
                                             <td>{{ $recipe->description  }}</td>
-                                            <td><a href="#" class="button small">Edit</a></td>
+                                            <td><a href="{{ route('recipes.edit', $recipe->id) }}" class="button small">Edit</a></td>
                                         </tr>
                                     @endforeach
                                 </tbody>

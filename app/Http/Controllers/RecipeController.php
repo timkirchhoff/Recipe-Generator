@@ -33,4 +33,9 @@ class RecipeController extends Controller
         session()->flash('success', 'New recipe added!');
         return redirect(route('home'));
     }
+
+    public function edit(Recipe $recipe)
+    {
+        return view('recipes.edit')->with('recipe', $recipe);
+    }
 }
