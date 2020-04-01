@@ -65,6 +65,9 @@
                             </div>
                         </div>
 
+                        <!-- ====== User ID ====== -->
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}" required>
+
                         <!-- ====== Submit Button ====== -->
                         <div class="row uniform" id="button_row">
                             <div class="12u$">
