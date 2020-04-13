@@ -26,8 +26,6 @@
     <!-- Banner -->
     <section id="banner">
         <div class="inner">
-            @include('partials.flash')
-            @include('partials.error')
             <header>
                 <h1>Recipe App</h1>
                 <p>Simplifying Your Dinner Decision Making Process</p>
