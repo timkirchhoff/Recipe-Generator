@@ -17,12 +17,14 @@ class Step extends Model
      */
     public static function storeSteps($recipeId, $recipe_steps)
     {
+        $steps = [];
         foreach($recipe_steps['steps'] as $stepNumber => $stepInstruction) {
-            Step::create([
-                'recipe_id' => $recipeId,
-                'number' => $stepNumber,
-                'instruction' => $stepInstruction
-            ]);
+            $step = ['number' => $stepNumber, 'instruction' => $stepInstruction];
+            array_push($steps, $step);
         }
+        Step::create([
+            'recipe_id' => $recipeId,
+            'steps' => json_encode($steps)
+        ]);
     }
 }
