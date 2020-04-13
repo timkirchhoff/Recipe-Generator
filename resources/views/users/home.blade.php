@@ -17,6 +17,7 @@
         <section class="wrapper style1">
             <div class="inner">
                 <div class="align-center">    
+                    @include('partials.flash')
                     <h2>{{ $user->name }}'s Recipes</h2>
                     
                     @if ($recipes->count() > 0)
