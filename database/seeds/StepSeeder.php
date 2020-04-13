@@ -15,7 +15,7 @@ class StepSeeder extends Seeder
         // ====== Recipe 1 ======
         Step::create([
             'recipe_id' => 1,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Cook ground beef'],
                 ['number' => 2, 'instruction' => 'Add cooked beef and cheese to tortilla']
             ])
@@ -24,7 +24,7 @@ class StepSeeder extends Seeder
         // ====== Recipe 2 ======
         Step::create([
             'recipe_id' => 2,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Mix dijon and lemon juice in small bowl'],
                 ['number' => 2, 'instruction' => 'Cover salmon with dijon/lemon sauce'],
                 ['number' => 3, 'instruction' => 'Bake salmon for 15 minutes']
@@ -34,7 +34,7 @@ class StepSeeder extends Seeder
         // // ====== Recipe 3 ======
         Step::create([
             'recipe_id' => 3,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Chop chicken, peppers, and onion into strips'],
                 ['number' => 2, 'instruction' => 'Put chopped ingredients on a pan and season'],
                 ['number' => 3, 'instruction' => 'Bake for 25 minutes'],
@@ -45,7 +45,7 @@ class StepSeeder extends Seeder
         // // ====== Recipe 4 ======
         Step::create([
             'recipe_id' => 4,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Cook spaghetti according to the box'],
                 ['number' => 2, 'instruction' => 'Bake the meatballs for 20 minutes'],
                 ['number' => 3, 'instruction' => 'Combine spaghetti, meatballs, and sauce']
@@ -55,7 +55,7 @@ class StepSeeder extends Seeder
         // // ====== Recipe 5 ======
         Step::create([
             'recipe_id' => 5,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Cook pizza according to the box']
             ])
         ]);
@@ -63,7 +63,7 @@ class StepSeeder extends Seeder
         // // ====== Recipe 6 ======
         Step::create([
             'recipe_id' => 6,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Cut beef into strips and marinate with soy sauce'],
                 ['number' => 2, 'instruction' => 'Chop broccoli'],
                 ['number' => 3, 'instruction' => 'Cook meat in pan for 5 minutes'],
@@ -74,7 +74,7 @@ class StepSeeder extends Seeder
         // // ====== Recipe 7 ======
         Step::create([
             'recipe_id' => 7,
-            'recipe_steps' => json_encode([
+            'steps' => json_encode([
                 ['number' => 1, 'instruction' => 'Scramble eggs'],
                 ['number' => 2, 'instruction' => 'Cut potatoes into small cubes and bake in oven until soft'],
                 ['number' => 3, 'instruction' => 'Add eggs and potatoes to a tortilla'],
