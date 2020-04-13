@@ -16,9 +16,9 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 1,
             'ingredients' => json_encode([
-                ['name'=>'Ground Beef', 'amount'=>'1', 'measurement'=>'pound'],
-                ['name'=>'Cheese', 'amount'=>'1', 'measurement'=>'cup'],
-                ['name'=>'Tortilla', 'amount'=>'12', 'measurement'=>'ounce']
+                ['amount'=>'1', 'measurement'=>'pound', 'name'=>'Ground Beef'],
+                ['amount'=>'1', 'measurement'=>'cup', 'name'=>'Cheese'],
+                ['amount'=>'12', 'measurement'=>'ounce', 'name'=>'Tortilla']
             ])
         ]);
 
@@ -26,9 +26,9 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 2,
             'ingredients' => json_encode([
-                ['name'=>'Salmon', 'amount'=>'1', 'measurement'=>'pound'],
-                ['name'=>'Dijon Mustard', 'amount'=>'4', 'measurement'=>'tablespoon'],
-                ['name'=>'Lemon Juice', 'amount'=>'1', 'measurement'=>'tablespoon']
+                ['amount'=>'1', 'measurement'=>'pound', 'name'=>'Salmon'],
+                ['amount'=>'4', 'measurement'=>'tablespoon', 'name'=>'Dijon Mustard'],
+                ['amount'=>'1', 'measurement'=>'tablespoon', 'name'=>'Lemon Juice']
             ])
         ]);
 
@@ -36,9 +36,9 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 3,
             'ingredients' => json_encode([
-                ['name'=>'Chicken', 'amount'=>'2', 'measurement'=>'pound'],
-                ['name'=>'Red Bell Pepper', 'amount'=>'1/2', 'measurement'=>'pound'],
-                ['name'=>'Onion', 'amount'=>'1/2', 'measurement'=>'pound']
+                ['amount'=>'2', 'measurement'=>'pound', 'name'=>'Chicken'],
+                ['amount'=>'1/2', 'measurement'=>'pound', 'name'=>'Red Bell Pepper'],
+                ['amount'=>'1/2', 'measurement'=>'pound', 'name'=>'Onion']
             ])
         ]);
 
@@ -46,8 +46,8 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 4,
             'ingredients' => json_encode([
-                ['name'=>'Spaghetti', 'amount'=>'16', 'measurement'=>'ounce'],
-                ['name'=>'Meatballs', 'amount'=>'2', 'measurement'=>'pound']
+                ['amount'=>'16', 'measurement'=>'ounce', 'name'=>'Spaghetti'],
+                ['amount'=>'2', 'measurement'=>'pound', 'name'=>'Meatballs']
             ])
         ]);
 
@@ -55,7 +55,7 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 5,
             'ingredients' => json_encode([
-                ['name'=>'Frozen Pizza', 'amount'=>'1', 'measurement'=>'pound']
+                ['amount'=>'1', 'measurement'=>'pound', 'name'=>'Frozen Pizza']
             ])
         ]);
 
@@ -63,8 +63,8 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 6,
             'ingredients' => json_encode([
-                ['name'=>'Beef', 'amount'=>'2', 'measurement'=>'pound'],
-                ['name'=>'Broccoli', 'amount'=>'12', 'measurement'=>'ounce']
+                ['amount'=>'2', 'measurement'=>'pound', 'name'=>'Beef'],
+                ['amount'=>'12', 'measurement'=>'ounce', 'name'=>'Broccoli']
             ])
         ]);
 
@@ -72,10 +72,10 @@ class IngredientSeeder extends Seeder
         Ingredient::create([
             'recipe_id' => 7,
             'ingredients' => json_encode([
-                ['name'=>'Eggs', 'amount'=>'12', 'measurement'=>'ounce'],
-                ['name'=>'Cheese', 'amount'=>'1/2', 'measurement'=>'cup'],
-                ['name'=>'Potato', 'amount'=>'1', 'measurement'=>'pound'],
-                ['name'=>'Avocado', 'amount'=>'1/4', 'measurement'=>'pound']
+                ['amount'=>'12', 'measurement'=>'ounce', 'name'=>'Eggs'],
+                ['amount'=>'1/2', 'measurement'=>'cup', 'name'=>'Cheese'],
+                ['amount'=>'1', 'measurement'=>'pound', 'name'=>'Potato'],
+                ['amount'=>'1/4', 'measurement'=>'pound', 'name'=>'Avocado']
             ])
         ]);
     }
