@@ -16,16 +16,14 @@ class Ingredient extends Model
      * @return void
      */
     public static function storeIngredients($recipeId, $recipe_ingredients)
-    {
-        foreach($recipe_ingredients as $ingredients) {
-            foreach($ingredients as $ingredient) {
-                Ingredient::create([
-                    'recipe_id' => $recipeId,
-                    'name' => $ingredient['name'],
-                    'amount' => $ingredient['amount'],
-                    'measurement' => $ingredient['measurement']
-                ]);
-            }
-        }   
+    {   
+        $ingredients = [];
+        foreach($recipe_ingredients['ingredients'] as $ingredient) {
+            array_push($ingredients, $ingredient);
+        }
+        Ingredient::create([
+            'recipe_id' => $recipeId,
+            'ingredients' => json_encode($ingredients)
+        ]);
     }
 }
