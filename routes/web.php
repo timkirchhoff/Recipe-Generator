@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'RecipeController@index')->name('home');
-Route::get('/recipe/new', 'RecipeController@new')->name('recipes.new');
-Route::post('/recipe', 'RecipeController@store')->name('recipes.store');
+
+// Must be logged in to add recipes and view user home page
+Route::middleware('auth')->group(function() {
+    Route::get('/recipes/new', 'RecipeController@new')->name('recipes.new');
+    Route::post('/recipes', 'RecipeController@store')->name('recipes.store');
+    Route::get('/recipes/{recipe}/edit', 'RecipeController@edit')->name('recipes.edit');
+
+    Route::get('/users/{user}', 'UserController@index')->name('users.home');
+});
 
 Route::post('/dinners/generate', 'DinnerController@generate')->name('dinners.generate');

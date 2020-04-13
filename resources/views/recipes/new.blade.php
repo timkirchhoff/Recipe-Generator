@@ -5,6 +5,13 @@
 @endsection
 
 @section('content')
+    <!-- Header -->
+    <header id="header" class="alt">
+        <div class="container">
+            <a href="{{ route('home') }}">Home</a>
+        </div>
+    </header>
+
     <div class="main">
         <section class="wrapper style1">
             <div class="inner">
@@ -64,6 +71,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- ====== User ID ====== -->
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}" required>
 
                         <!-- ====== Submit Button ====== -->
                         <div class="row uniform" id="button_row">

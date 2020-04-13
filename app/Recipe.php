@@ -6,11 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Recipe extends Model
 {
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'user_id'];
+    
+    /**
+     * Relationship between Recipe and User
+     * Given a recipe, return the owning user
+     *
+     * @return void
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     
     /**
      * Relationship between Recipe and Ingredient
-     * Given a recipe, return the ingrdients
+     * Given a recipe, return the ingredients
      *
      * @return void
      */
@@ -37,11 +48,12 @@ class Recipe extends Model
      * @param [type] $recipe_info
      * @return void
      */
-    public static function storeRecipe($recipe_info)
+    public static function storeRecipe($recipe_details)
     {
         $recipe = Recipe::create([
-            'title' => $recipe_info['title'],
-            'description' =>$recipe_info['description']
+            'title' => $recipe_details['title'],
+            'description' => $recipe_details['description'],
+            'user_id' => $recipe_details['user_id']
         ]);
 
         return $recipe;

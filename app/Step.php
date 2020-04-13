@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Step extends Model
 {
-    protected $fillable = ['recipe_id', 'number', 'instruction'];
+    protected $fillable = ['recipe_id', 'steps'];
 
     /**
      * Store steps for a new recipe

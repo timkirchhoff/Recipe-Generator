@@ -16,6 +16,11 @@
     border-color:#e04f4f;
 }
 
+.table-header {
+    text-align: center;
+    font-size: large;
+}
+
 .ingredientAmount {
     text-align: center;
 }

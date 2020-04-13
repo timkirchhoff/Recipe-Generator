@@ -16,16 +16,20 @@
                             <h2>{{ $recipe->title }}</h2>
                             <p>{{ $recipe->description }}</p>
                             <h4>Ingredients</h4>
-                            @foreach($recipe->ingredients as $ingredient)
-                                <ul>
-                                    <li>{{ $ingredient->amount }} {{ $ingredient->measurement }} - {{ $ingredient->name }}</li>
-                                </ul>
+                            @foreach(json_decode($recipe->ingredients) as $recipeIngredients)
+                                @foreach(json_decode($recipeIngredients->ingredients) as $ingredient)
+                                    <ul>
+                                        <li>{{ $ingredient->amount }} {{ $ingredient->measurement }} - {{ $ingredient->name }}</li>
+                                    </ul>
+                                @endforeach
                             @endforeach
                             <h4>Steps</h4>
-                            @foreach($recipe->steps as $step)
-                                <ul>
-                                    <li>{{ $step->number }} - {{ $step->instruction }}</li>
-                                </ul>
+                            @foreach(json_decode($recipe->steps) as $recipeSteps)
+                                @foreach(json_decode($recipeSteps->steps) as $step)
+                                    <ul>
+                                        <li>{{ $step->number }} - {{ $step->instruction }}</li>
+                                    </ul>
+                                @endforeach
                             @endforeach
                         </div>
                     @endforeach

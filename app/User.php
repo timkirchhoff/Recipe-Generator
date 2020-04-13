@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -36,4 +35,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relationship between User and Recipe
+     * Given a user, return their recipes
+     *
+     * @return void
+     */
+    public function recipes()
+    {
+        return $this->hasMany('App\Recipe');
+    }
+
+    /**
+     * Check if a user is an admin
+     *
+     * @return boolean
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }
