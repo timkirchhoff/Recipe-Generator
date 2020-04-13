@@ -15,7 +15,7 @@ class IngredientSeeder extends Seeder
         // ====== Recipe 1 ======
         Ingredient::create([
             'recipe_id' => 1,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Ground Beef', 'amount'=>'1', 'measurement'=>'pound'],
                 ['name'=>'Cheese', 'amount'=>'1', 'measurement'=>'cup'],
                 ['name'=>'Tortilla', 'amount'=>'12', 'measurement'=>'ounce']
@@ -25,7 +25,7 @@ class IngredientSeeder extends Seeder
         // ====== Recipe 2 ======
         Ingredient::create([
             'recipe_id' => 2,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Salmon', 'amount'=>'1', 'measurement'=>'pound'],
                 ['name'=>'Dijon Mustard', 'amount'=>'4', 'measurement'=>'tablespoon'],
                 ['name'=>'Lemon Juice', 'amount'=>'1', 'measurement'=>'tablespoon']
@@ -35,7 +35,7 @@ class IngredientSeeder extends Seeder
         // // ====== Recipe 3 ======
         Ingredient::create([
             'recipe_id' => 3,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Chicken', 'amount'=>'2', 'measurement'=>'pound'],
                 ['name'=>'Red Bell Pepper', 'amount'=>'1/2', 'measurement'=>'pound'],
                 ['name'=>'Onion', 'amount'=>'1/2', 'measurement'=>'pound']
@@ -45,7 +45,7 @@ class IngredientSeeder extends Seeder
         // // ====== Recipe 4 ======
         Ingredient::create([
             'recipe_id' => 4,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Spaghetti', 'amount'=>'16', 'measurement'=>'ounce'],
                 ['name'=>'Meatballs', 'amount'=>'2', 'measurement'=>'pound']
             ])
@@ -54,7 +54,7 @@ class IngredientSeeder extends Seeder
         // // ====== Recipe 5 ======
         Ingredient::create([
             'recipe_id' => 5,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Frozen Pizza', 'amount'=>'1', 'measurement'=>'pound']
             ])
         ]);
@@ -62,7 +62,7 @@ class IngredientSeeder extends Seeder
         // // ====== Recipe 6 ======
         Ingredient::create([
             'recipe_id' => 6,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Beef', 'amount'=>'2', 'measurement'=>'pound'],
                 ['name'=>'Broccoli', 'amount'=>'12', 'measurement'=>'ounce']
             ])
@@ -71,7 +71,7 @@ class IngredientSeeder extends Seeder
         // // ====== Recipe 7 ======
         Ingredient::create([
             'recipe_id' => 7,
-            'recipe_ingredients' => json_encode([
+            'ingredients' => json_encode([
                 ['name'=>'Eggs', 'amount'=>'12', 'measurement'=>'ounce'],
                 ['name'=>'Cheese', 'amount'=>'1/2', 'measurement'=>'cup'],
                 ['name'=>'Potato', 'amount'=>'1', 'measurement'=>'pound'],
