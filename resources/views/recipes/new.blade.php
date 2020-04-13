@@ -41,9 +41,14 @@
                                     <div class="select-wrapper">
                                         <select name="ingredients[1][measurement]" required>
                                             <option value="">- Measurement -</option>
+                                            <option value="box">box</option>
                                             <option value="cup">cup</option>
+                                            <option value="large">large</option>
                                             <option value="pound">lb</option>
+                                            <option value="medium">medium</option>
                                             <option value="ounce">oz</option>
+                                            <option value="package">package</option>
+                                            <option value="small">small</option>
                                             <option value="teaspoon">tsp</option>
                                             <option value="tablespoon">Tbsp</option>
                                         </select>
