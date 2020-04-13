@@ -31,7 +31,7 @@ class RecipeController extends Controller
         Step::storeSteps($recipe->id, $recipe_steps);
         
         session()->flash('success', 'New recipe added!');
-        return redirect(route('home'));
+        return redirect(route('users.home', $recipe->user_id));
     }
 
     public function edit(Recipe $recipe)
