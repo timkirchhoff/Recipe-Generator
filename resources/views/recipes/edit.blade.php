@@ -93,9 +93,11 @@
                     </form>
                         
                     <!-- ====== Steps ====== -->
-                    <div id="steps">
-                        <h4 class="12u$" id="steps_heading">Steps</h4>
-                        <form action="#" method="POST" id="update_steps_form">
+                    <h4 class="12u$" id="steps_heading">Steps</h4>
+                    <form action="{{ route('recipes.update-steps', $recipe->id) }}" method="POST" id="update_steps_form">
+                        @csrf
+                        @method('PUT')
+                        <div id="steps">
                             @foreach(json_decode($recipe->steps[0]['steps']) as $count => $step)
                             <div class="row uniform" id="step{{ $count+1 }}">
                                     <div class="1u stepNumber">{{ $count+1 }}.</div>
@@ -111,14 +113,14 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <!-- ====== Submit Button ====== -->
-                            <div class="row uniform" id="button_row">
-                                <div class="12u$">
-                                    <button type="submit" class="button big" id="update_steps">Update Steps</button>
-                                </div>
+                        </div>
+                        <!-- ====== Submit Button ====== -->
+                        <div class="row uniform" id="button_row">
+                            <div class="12u$">
+                                <button type="submit" class="button big" id="update_steps">Update Steps</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
