@@ -34,7 +34,7 @@
                         <!-- ====== Ingredients ====== -->
                         <div id="ingredients">
                             <h4 class="12u$" id="ingredients_heading">Ingredients</h4>
-                            @foreach($recipe->ingredients as $count => $ingredient)
+                            @foreach(json_decode($recipe->ingredients[0]['ingredients']) as $count => $ingredient)
                                 <div class="row uniform" id="ingredient{{ $count+1 }}">
                                     <div class="2u">
                                         <input type="text" class="ingredientAmount" name="ingredients[{{ $count+1 }}][amount]" value="{{  $ingredient->amount  }}" placeholder="Amount" required/>
@@ -73,7 +73,7 @@
                         <!-- ====== Steps ====== -->
                         <div id="steps">
                             <h4 class="12u$" id="steps_heading">Steps</h4>
-                            @foreach($recipe->steps as $count => $step)
+                            @foreach(json_decode($recipe->steps[0]['steps']) as $count => $step)
                             <div class="row uniform" id="step{{ $count+1 }}">
                                     <div class="1u stepNumber">{{ $count+1 }}.</div>
                                     <div class="10u">
