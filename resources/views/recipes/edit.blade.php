@@ -43,9 +43,14 @@
                                         <div class="select-wrapper">
                                             <select name="ingredients[{{ $count+1 }}][measurement]" required>
                                                 <option value="">- Measurement -</option>
+                                                <option value="cup" {{ $ingredient->measurement === "box" ? 'selected' : '' }}>box</option>
                                                 <option value="cup" {{ $ingredient->measurement === "cup" ? 'selected' : '' }}>cup</option>
+                                                <option value="cup" {{ $ingredient->measurement === "large" ? 'selected' : '' }}>large</option>
                                                 <option value="pound" {{ $ingredient->measurement === "pound" ? 'selected' : '' }}>lb</option>
+                                                <option value="pound" {{ $ingredient->measurement === "medium" ? 'selected' : '' }}>medium</option>
                                                 <option value="ounce" {{ $ingredient->measurement === "ounce" ? 'selected' : '' }}>oz</option>
+                                                <option value="ounce" {{ $ingredient->measurement === "package" ? 'selected' : '' }}>package</option>
+                                                <option value="ounce" {{ $ingredient->measurement === "small" ? 'selected' : '' }}>small</option>
                                                 <option value="teaspoon" {{ $ingredient->measurement === "teaspoon" ? 'selected' : '' }}>tsp</option>
                                                 <option value="tablespoon" {{ $ingredient->measurement === "tablespoon" ? 'selected' : '' }}>Tbsp</option>
                                             </select>
@@ -111,7 +116,7 @@
 
             $('#add_ingredient').click(function(){
                 ingredient_count++;
-                $('#ingredients').append('<div class="row uniform" id="ingredient'+ingredient_count+'"><div class="2u"><input type="text" class="ingredientAmount" name="ingredients['+ingredient_count+'][amount]" placeholder="Amount" required></div><div class="2u"><div class="select-wrapper"><select name="ingredients['+ingredient_count+'][measurement]" required><option value="">- Measurement -</option><option value="cup">cup</option><option value="pound">lb</option><option value="ounce">oz</option><option value="teaspoon">tsp</option><option value="tablespoon">Tbsp</option></select></div></div><div class="7u"><input type="text" name="ingredients['+ingredient_count+'][name]" placeholder="Ingredient" required></div><div class="1u$"><button type="button" name="remove_ingredient" class="remove_ingredient" id="'+ingredient_count+'">-</button></div></div>');
+                $('#ingredients').append('<div class="row uniform" id="ingredient'+ingredient_count+'"><div class="2u"><input type="text" class="ingredientAmount" name="ingredients['+ingredient_count+'][amount]" placeholder="Amount" required></div><div class="2u"><div class="select-wrapper"><select name="ingredients['+ingredient_count+'][measurement]" required><option value="">- Measurement -</option><option value="box">box</option><option value="cup">cup</option><option value="large">large</option><option value="pound">lb</option><option value="medium">medium</option><option value="ounce">oz</option><option value="package">package</option><option value="small">small</option><option value="teaspoon">tsp</option><option value="tablespoon">Tbsp</option></select></div></div><div class="7u"><input type="text" name="ingredients['+ingredient_count+'][name]" placeholder="Ingredient" required></div><div class="1u$"><button type="button" name="remove_ingredient" class="remove_ingredient" id="'+ingredient_count+'">-</button></div></div>');
             });
 
             $(document).on('click', '.remove_ingredient', function(){
