@@ -30,10 +30,18 @@
                                 <textarea name="description" placeholder="Describe your recipe..." rows="6" required>{{ $recipe->description }}</textarea>
                             </div>
                         </div>
+                        <!-- ====== Submit Button ====== -->
+                        <div class="row uniform" id="button_row">
+                            <div class="12u$">
+                                <button type="submit" class="button big" id="update_details">Update Details</button>
+                            </div>
+                        </div>
+                    </form>
 
-                        <!-- ====== Ingredients ====== -->
-                        <div id="ingredients">
-                            <h4 class="12u$" id="ingredients_heading">Ingredients</h4>
+                    <!-- ====== Ingredients ====== -->
+                    <div id="ingredients">
+                        <h4 class="12u$" id="ingredients_heading">Ingredients</h4>
+                        <form action="#" method="POST" id="update_ingredients_form">
                             @foreach(json_decode($recipe->ingredients[0]['ingredients']) as $count => $ingredient)
                                 <div class="row uniform" id="ingredient{{ $count+1 }}">
                                     <div class="2u">
@@ -68,11 +76,19 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                            <!-- ====== Submit Button ====== -->
+                            <div class="row uniform" id="button_row">
+                                <div class="12u$">
+                                    <button type="submit" class="button big" id="update_ingredients">Update Ingredients</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                         
-                        <!-- ====== Steps ====== -->
-                        <div id="steps">
-                            <h4 class="12u$" id="steps_heading">Steps</h4>
+                    <!-- ====== Steps ====== -->
+                    <div id="steps">
+                        <h4 class="12u$" id="steps_heading">Steps</h4>
+                        <form action="#" method="POST" id="update_steps_form">
                             @foreach(json_decode($recipe->steps[0]['steps']) as $count => $step)
                             <div class="row uniform" id="step{{ $count+1 }}">
                                     <div class="1u stepNumber">{{ $count+1 }}.</div>
@@ -88,15 +104,14 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
-
-                        <!-- ====== Submit Button ====== -->
-                        <div class="row uniform" id="button_row">
-                            <div class="12u$">
-                                <button type="submit" class="button big" id="update_recipe">Update Recipe</button>
+                            <!-- ====== Submit Button ====== -->
+                            <div class="row uniform" id="button_row">
+                                <div class="12u$">
+                                    <button type="submit" class="button big" id="update_steps">Update Steps</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
