@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreRecipeRequest;
+use App\Http\Requests\UpdateRecipeRequest;
 use App\Ingredient;
 use App\Recipe;
 use App\Step;
@@ -37,5 +38,13 @@ class RecipeController extends Controller
     public function edit(Recipe $recipe)
     {
         return view('recipes.edit')->with('recipe', $recipe);
+    }
+
+    public function updateRecipeDetails(UpdateRecipeRequest $request, Recipe $recipe)
+    {
+        $data = $request->all();
+        $recipe->update($data);
+        session()->flash('success', 'Recipe details updated successfully!');
+        return redirect()->back();
     }
 }
