@@ -16,9 +16,10 @@
         <section class="wrapper style1">
             <div class="inner">
                 <div class="align-center">
-                    <h2>Edit {{ $recipe->title }}</h2>
+                    @include('partials.flash')
                     @include('partials.error')
-                    <form action="#" method="POST" id="update_recipe_form">
+                    <h2>Edit {{ $recipe->title }}</h2>
+                    <form action="{{ route('recipes.update-details', $recipe->id) }}" method="POST" id="update_recipe_form">
                         @csrf
                         @method('PUT')
                         <!-- ====== Recipe Info ====== -->
@@ -30,6 +31,10 @@
                                 <textarea name="description" placeholder="Describe your recipe..." rows="6" required>{{ $recipe->description }}</textarea>
                             </div>
                         </div>
+
+                        <!-- ====== User ID ====== -->
+                        <input type="hidden" name="user_id" value="{{ Auth::id() }}" required>
+                        
                         <!-- ====== Submit Button ====== -->
                         <div class="row uniform" id="button_row">
                             <div class="12u$">
