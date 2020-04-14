@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/recipes/new', 'RecipeController@new')->name('recipes.new');
     Route::post('/recipes', 'RecipeController@store')->name('recipes.store');
     Route::get('/recipes/{recipe}/edit', 'RecipeController@edit')->name('recipes.edit');
+    Route::put('/recipes/{recipe}/update-details', 'RecipeController@updateRecipeDetails')->name('recipes.update-details');
 
     Route::get('/users/{user}', 'UserController@index')->name('users.home');
 });
