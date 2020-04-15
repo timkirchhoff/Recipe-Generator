@@ -28,6 +28,7 @@
                                         <th class="table-header">Title</th>
                                         <th class="table-header">Description</th>
                                         <th class="table-header"></th>
+                                        <th class="table-header"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,7 +36,25 @@
                                         <tr>    
                                             <td>{{ $recipe->title }}</td>
                                             <td>{{ $recipe->description  }}</td>
-                                            <td><a href="{{ route('recipes.edit', $recipe->id) }}" class="button small">Edit</a></td>
+                                            @if($recipe->trashed())
+                                                <td></td>
+                                                <td>
+                                                    <form action="{{ route('recipes.restore', $recipe->id) }}" method="POST" id="delete-recipe-form">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <button type="submit" class="button small" id="restore-button">Restore</button>
+                                                    </form>
+                                                </td>
+                                            @else
+                                                <td><a href="{{ route('recipes.edit', $recipe->id) }}" class="button small">Edit</a></td>
+                                                <td>
+                                                    <form action="{{ route('recipes.destroy', $recipe->id) }}" method="POST" id="delete-recipe-form">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="button small icon fa-trash" id="delete-button"></button>
+                                                    </form>
+                                                </td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 </tbody>
