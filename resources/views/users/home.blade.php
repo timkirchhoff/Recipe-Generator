@@ -32,7 +32,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($recipes as $recipe)
+                                    @foreach($recipes->sortBy('id') as $recipe)
                                         <tr>    
                                             <td>{{ $recipe->title }}</td>
                                             <td>{{ $recipe->description  }}</td>
