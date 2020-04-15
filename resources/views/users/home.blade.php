@@ -39,7 +39,7 @@
                                             @if($recipe->trashed())
                                                 <td></td>
                                                 <td>
-                                                    <form action="{{ route('recipes.restore', $recipe->id) }}" method="POST" id="delete-recipe-form">
+                                                    <form action="{{ route('recipes.restore', $recipe->id) }}" method="POST" id="restore-recipe-form">
                                                         @csrf
                                                         @method('PUT')
                                                         <button type="submit" class="button small" id="restore-button">Restore</button>

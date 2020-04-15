@@ -65,7 +65,7 @@ button.remove_ingredient, button.remove_step {
     margin-top: 2em;
 }
 
-#delete-recipe-form {
+#delete-recipe-form, #restore-recipe-form {
     margin: 0;
 }
 
