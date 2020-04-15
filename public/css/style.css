@@ -64,3 +64,16 @@ button.remove_ingredient, button.remove_step {
 #button_row {
     margin-top: 2em;
 }
+
+#delete-recipe-form {
+    margin: 0;
+}
+
+#delete-button {
+    background-color: rgb(212, 59, 59);
+    padding: 0 1em 0 1.5em;
+}
+
+#restore-button {
+    background-color: rgb(82, 185, 51);
+}
