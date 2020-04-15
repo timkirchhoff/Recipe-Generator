@@ -94,4 +94,31 @@ class RecipeController extends Controller
         session()->flash('success', 'Steps updated successfully!');
         return redirect()->back();
     }
+
+    /**
+     * Soft delete a recipe
+     *
+     * @param Recipe $recipe
+     * @return void
+     */
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
+        session()->flash('success', 'Recipe has been deleted');
+        return redirect()->back();
+    }
+
+    /**
+     * Restore a deleted recipe
+     *
+     * @param [type] $id
+     * @return void
+     */
+    public function restore($id)
+    {
+        $recipe = Recipe::withTrashed()->where('id', $id)->firstOrFail();
+        $recipe->restore();
+        session()->flash('success', 'Recipe successfully restored!');
+        return redirect()->back();
+    }
 }
