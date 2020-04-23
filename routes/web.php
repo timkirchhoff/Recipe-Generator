@@ -32,4 +32,4 @@ Route::middleware('auth')->group(function() {
     Route::get('/users/{user}', 'UserController@index')->name('users.home');
 });
 
-Route::post('/dinners/generate', 'DinnerController@generate')->name('dinners.generate');
+Route::post('/dinners', 'DinnerController@generate')->name('dinners.generate');
