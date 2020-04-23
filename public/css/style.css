@@ -77,3 +77,21 @@ button.remove_ingredient, button.remove_step {
 #restore-button {
     background-color: rgb(82, 185, 51);
 }
+
+#generated-recipes {
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#generated-recipes .card {
+    width: 24rem;
+    margin-bottom: 2rem;
+}
+
+.modal-backdrop {
+    z-index: -1;
+  }
