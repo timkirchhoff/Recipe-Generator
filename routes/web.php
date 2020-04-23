@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function() {
     Route::put('/recipes/{recipe}/update-details', 'RecipeController@updateRecipeDetails')->name('recipes.update-details');
     Route::put('/recipes/{recipe}/update-ingredients', 'RecipeController@updateIngredients')->name('recipes.update-ingredients');
     Route::put('/recipes/{recipe}/update-steps', 'RecipeController@updateSteps')->name('recipes.update-steps');
+    Route::delete('/recipes/{recipe}', 'RecipeController@destroy')->name('recipes.destroy');
+    Route::put('/recipes/{recipe}', 'RecipeController@restore')->name('recipes.restore');
 
     Route::get('/users/{user}', 'UserController@index')->name('users.home');
 });

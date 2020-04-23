@@ -13,7 +13,7 @@ class UserController extends Controller
         if ($user->isAdmin()) {
             $recipes = Recipe::all();
         } else {
-            $recipes = $user->recipes;
+            $recipes = Recipe::withTrashed()->where('user_id', $user->id)->get();
         }
         
         return view('users.home')

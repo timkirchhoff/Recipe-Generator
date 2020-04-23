@@ -19,6 +19,7 @@ class CreateRecipesTable extends Migration
             $table->text('description');
             $table->integer('user_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
