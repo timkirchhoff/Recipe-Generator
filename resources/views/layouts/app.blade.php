@@ -7,9 +7,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <!-- Styles -->
+        @yield('styles')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-        @yield('styles')
     </head>
     <body>
         @yield('content')
@@ -20,6 +20,7 @@
         <script src="{{ asset('js/skel.min.js') }}"></script>
         <script src="{{ asset('js/util.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         @yield('scripts')
     </body>
 </html>
