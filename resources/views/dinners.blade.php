@@ -29,25 +29,22 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title" id="recipe{{ $recipe->id }}Modal">{{ $recipe->title }}</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <h3 class="modal-title" id="recipe{{ $recipe->id }}Modal">{{ $recipe->title }}</h3>
                                         </div>
                                         <div class="modal-body">
-                                            <h4>Ingredients</h4>
+                                            <h4>Ingredients:</h4>
                                             @foreach(json_decode($recipe->ingredients) as $recipeIngredients)
                                                 @foreach(json_decode($recipeIngredients->ingredients) as $ingredient)
                                                     <ul>
-                                                        <li>{{ $ingredient->amount }} {{ $ingredient->measurement }} - {{ $ingredient->name }}</li>
+                                                        <li>{{ $ingredient->amount }} {{ $ingredient->measurement }} {{ $ingredient->name }}</li>
                                                     </ul>
                                                 @endforeach
                                             @endforeach
-                                            <h4>Steps</h4>
+                                            <h4>Steps:</h4>
                                             @foreach(json_decode($recipe->steps) as $recipeSteps)
                                                 @foreach(json_decode($recipeSteps->steps) as $step)
                                                     <ul>
-                                                        <li>{{ $step->number }} - {{ $step->instruction }}</li>
+                                                        <li>{{ $step->number }}.  {{ $step->instruction }}</li>
                                                     </ul>
                                                 @endforeach
                                             @endforeach
